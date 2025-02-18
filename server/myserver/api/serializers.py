@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CustomUser
+from .models import CustomUser , Groups
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
@@ -31,3 +31,11 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
       
 
         return data
+
+
+
+
+class GroupsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Groups
+        fields = ['name', 'cooperative_name']
